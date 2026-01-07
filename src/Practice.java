@@ -39,7 +39,7 @@ public class Practice {
     return frequencies;
   }
 
-  // Time Complexity: O(n) n = length of n 
+  // Time Complexity: O(n) n = length of n
   // Space Complexity: O(n)
   public static List<Integer> evensToSquare(int n) {
     List<Integer> evens = new ArrayList<>();
@@ -68,25 +68,25 @@ public class Practice {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
 
-   Map<Integer, Integer> countMap = new HashMap<>();
-   int result = nums[0];
-   int mostCount = 0;
-   for(int i = 0; i< nums.length; i++){
-    int num = nums[i];
-    
-        if (countMap.containsKey(num)) {
-            countMap.put(num, countMap.get(num) + 1);
-        } else {
-            countMap.put(num, 1);
-        }
+    Map<Integer, Integer> countMap = new HashMap<>();
+    int result = nums[0];
+    int mostCount = 0;
+    for (int i = 0; i < nums.length; i++) {
+      int num = nums[i];
 
-        int currentCount = countMap.get(num);
+      if (countMap.containsKey(num)) {
+        countMap.put(num, countMap.get(num) + 1);
+      } else {
+        countMap.put(num, 1);
+      }
 
-        if (currentCount > mostCount) {
-            mostCount = currentCount;
-            result = num;
-        }
-        
+      int currentCount = countMap.get(num);
+
+      if (currentCount > mostCount) {
+        mostCount = currentCount;
+        result = num;
+      }
+
     }
 
     return result;
@@ -110,6 +110,20 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    return -1;
+    int number = 0;
+    int count = 0;
+
+    for (int num : nums) {
+      if (count == 0) {
+        number = num;
+        count = 1;
+      } else if (num == number) {
+        count++;
+      } else {
+        count--;
+      }
+    }
+
+    return number;
   }
 }
