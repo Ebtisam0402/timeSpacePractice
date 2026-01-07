@@ -28,4 +28,25 @@ public class PracticeTest {
     int actual = Practice.mostCommonTimeEfficient(nums);
     assertEquals(3, actual);
   }
+
+  @Test
+    void testMostCommonSpaceEfficient(){
+    int[] nums = {1,2,4,5,5,6,6};
+    int actual = Practice.mostCommonSpaceEfficient(nums);
+    assertEquals(5, actual);
+}
+
+  @Test 
+    void testMostCommonSpaceEfficientUnsorted() {
+    int[] nums = {5, 6, 1, 1, 2, 8};
+    int actual = Practice.mostCommonSpaceEfficient(nums);
+    assertEquals(1, actual);
+  }
+
+@Test 
+  void testMostCommonSpaceEfficientTripleDigits() {
+    int[] nums = {1, 2, 3, 3, 3};
+    int actual = Practice.mostCommonSpaceEfficient(nums);
+    assertEquals(3, actual);
+  }
 }
