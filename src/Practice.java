@@ -67,7 +67,29 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    return -1;
+
+   Map<Integer, Integer> countMap = new HashMap<>();
+   int result = nums[0];
+   int mostCount = 0;
+   for(int i = 0; i< nums.length; i++){
+    int num = nums[i];
+    
+        if (countMap.containsKey(num)) {
+            countMap.put(num, countMap.get(num) + 1);
+        } else {
+            countMap.put(num, 1);
+        }
+
+        int currentCount = countMap.get(num);
+
+        if (currentCount > mostCount) {
+            mostCount = currentCount;
+            result = num;
+        }
+        
+    }
+
+    return result;
   }
 
   /**
