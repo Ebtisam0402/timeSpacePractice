@@ -18,14 +18,14 @@ public class PracticeTest {
   @Test 
   void testMostCommonTimeEfficientUnsorted() {
     int[] nums = {5, 6, 1, 1, 2, 8};
-    int actual = Practice.mostCommonSpaceEfficient(nums);
+    int actual = Practice.mostCommonTimeEfficient(nums);
     assertEquals(1, actual);
   }
 
   @Test 
   void testMostCommonTimeEfficientTripleDigits() {
     int[] nums = {1, 2, 3, 3, 3};
-    int actual = Practice.mostCommonSpaceEfficient(nums);
+    int actual = Practice.mostCommonTimeEfficient(nums);
     assertEquals(3, actual);
   }
 }
